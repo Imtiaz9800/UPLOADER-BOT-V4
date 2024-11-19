@@ -282,4 +282,3 @@ async def echo(bot, update):
             parse_mode=enums.ParseMode.HTML,
             reply_to_message_id=update.id
         )
-

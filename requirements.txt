@@ -3,7 +3,7 @@ beautifulsoup4
 hachoir
 numpy
 Pillow
-pyrogram
+pyrofork
 requests
 tgcrypto
 yt-dlp
@@ -11,11 +11,14 @@ olefile
 motor
 pymongo
 dnspython
+ffmpeg-python
+ffmpeg
 psutil
 loggers
 filetype
 tldextract
 aiofiles
-pyromod
-Flask==1.1.2
+pyromod==1.2
+flask
 gunicorn==20.1.0
+

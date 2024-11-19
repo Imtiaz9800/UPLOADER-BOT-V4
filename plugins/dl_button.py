@@ -1,4 +1,4 @@
-# @Shrimadhav Uk
+# @Shrimadhav Uk | @LISA_FAN_LK
 
 
 import logging
@@ -63,9 +63,7 @@ async def ddl_call_back(bot, update):
                 o = entity.offset
                 l = entity.length
                 youtube_dl_url = youtube_dl_url[o:o + l]
-    user = await bot.get_me()
-    mention = user["mention"]
-    description = Translation.CUSTOM_CAPTION_UL_FILE.format(mention)
+    description = Translation.CUSTOM_CAPTION_UL_FILE
     start = datetime.now()
     await update.message.edit_caption(
         caption=Translation.DOWNLOAD_START,
@@ -85,13 +83,14 @@ async def ddl_call_back(bot, update):
                 youtube_dl_url,
                 download_directory,
                 update.message.chat.id,
-                update.id,
+                update.message.id,
                 c_time
             )
-        except asyncio.TimeOutError:
-            await update.message.edit_caption(
-                caption=Translation.SLOW_URL_DECED,
-                parse_mode=enums.ParseMode.HTML
+        except asyncio.TimeoutError:
+            await bot.edit_message_text(
+                text=Translation.SLOW_URL_DECED,
+                chat_id=update.message.chat.id,
+                message_id=update.message.id
             )
             return False
     if os.path.exists(download_directory):
@@ -219,13 +218,14 @@ async def download_coroutine(bot, session, url, file_name, chat_id, message_id, 
         content_type = response.headers["Content-Type"]
         if "text" in content_type and total_length < 500:
             return await response.release()
-        await update.message.edit_caption(
-         
-      
-            caption="""Initiating Download
+        await bot.edit_message_text(
+            chat_id,
+            message_id,
+            text="""Initiating Download
+            
 **🔗 Uʀʟ :** `{}`
-**🗂️ Sɪᴢᴇ :** {}""".format(url, humanbytes(total_length)),
-            parse_mode=enums.ParseMode.HTML
+
+**🗂️ Sɪᴢᴇ :** {}""".format(url, humanbytes(total_length))
         )
         with open(file_name, "wb") as f_handle:
             while True:
@@ -244,7 +244,7 @@ async def download_coroutine(bot, session, url, file_name, chat_id, message_id, 
                         (total_length - downloaded) / speed) * 1000
                     estimated_total_time = elapsed_time + time_to_completion
                     try:
-                        current_message = """**DᴏᴡɴʟᴏᴀᴅɪɴG**
+                        current_message = """**Download Status**
 **🔗 Uʀʟ :** `{}`
 
 **🗂️ Sɪᴢᴇ :** {}
@@ -258,10 +258,11 @@ async def download_coroutine(bot, session, url, file_name, chat_id, message_id, 
     TimeFormatter(estimated_total_time)
 )
                         if current_message != display_message:
-                            await update.message.edit_caption(
-                                caption=current_message,
-                                parse_mode=enums.ParseMode.HTML
-            )
+                            await bot.edit_message_text(
+                                chat_id,
+                                message_id,
+                                text=current_message
+                            )
                             display_message = current_message
                     except Exception as e:
                         logger.info(str(e))

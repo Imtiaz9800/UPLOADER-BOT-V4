@@ -1,7 +1,7 @@
 ## URL Uᴘʟᴏᴀᴅᴇʀ ʙᴏᴛ V4 🚀
 
 
-[![logo](https://te.legra.ph/file/82c925ccc38606d837831.jpg)](https://telegram.dog/UploadLinkToFileBot)
+[![logo](https://graph.org/file/a7af2d3ece56bbb1297aa.jpg)](https://telegram.dog/UploadLinkToFileBot)
 
 [![GitHub forks](https://img.shields.io/github/forks/LISA-KOREA/UPLOADER-BOT-V4?&style=flat-square&logo=github)](https://github.com/LISA-KOREA/UPLOADER-BOT-V4/fork)
 ![Repo Size](https://img.shields.io/github/repo-size/LISA-KOREA/UPLOADER-BOT-V4?&style=flat-square&logo=github)
@@ -42,6 +42,22 @@
 - Runtime : `Python 3`
 - Build Command : `pip install -r requirements.txt`
 - Start Command : `gunicorn app:app & python3 bot.py`
+- Go to https://uptimerobot.com/ and add a monitor to keep your bot alive
+- Use these settings when adding a monitor
+
+![](https://graph.org/file/899036d51bcd4defaa34e.jpg)
+
+
+
+</b>
+</details>
+
+### DigitalOcean
+<b><details><summary>Tap On Me For Deploy</summary>
+
+- Run Command : `gunicorn app:app & python3 bot.py`
+- Worker : `python3 bot.py`
+
 
 </b>
 </details>
@@ -56,9 +72,22 @@
 ### Render Video
 <a href="https://youtu.be/NYvMsC5Y_oI?feature=shared"><img alt="how to create" src="https://img.shields.io/badge/-YouTube-red?style=for-the-badge&logo=youtube&logoColor=white"/></a>
 
+### DigitalOcean
+<a href="https://youtu.be/pp2uB8lXqmQ?si=WtSco2lWTDQWA0fU"><img alt="how to create" src="https://img.shields.io/badge/-YouTube-red?style=for-the-badge&logo=youtube&logoColor=white"/></a>
+
 </b>
 </details>
 
+
+
+### Bot Commands 
+```
+start - Check Bot Online 🔔
+delthumb - Delete Your Thumbnail 🏞
+showthumb - Showing Your Thumbnail 🏞
+broadcast - Broadcast A Message To All Users 🌝
+invite - Invite Your Friends 🫂
+```
 
 ## Environment Variable
 
@@ -89,10 +118,14 @@ Check How To Make MONGODB URL or [YouTube](https://youtu.be/VudXkbirhM8?feature=
 - YouTube Channel : [Telegram Bots 🤖](https://youtube.com/@NTBOT?feature=shared)
 - Telegram Channel : [NT Bots ❤️‍🩹](https://t.me/NT_BOT_CHANNEL)
 - Telegram Group : [NT Bots Support 🎗️](https://t.me/NT_BOTS_SUPPORT)
-- URL Uploader Bot : [Uploader Bot V4 🚀](https://t.me/UploadLinkToFileBot)
+- URL Uploader Bot : [Uploader Bot 🚀](https://t.me/UploadLinkToFileBot)
 - My Tg Id : [Lisa 👑](https://t.me/LISA_FAN_LK)
+
+  
 
 </b>
 </details>
+
+### ⚠️ DON'T SELL THE REPO ###
 
 
